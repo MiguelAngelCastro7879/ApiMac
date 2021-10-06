@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProductsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,3 +23,7 @@ Route::get('/hola',function(Request $request)
 {
     return " Hola compas como se encuentran homies";
 });
+
+
+Route::get('/products_get', [ProductsController::class, 'getProducts']);
+Route::post('/products_post', [ProductsController::class, 'getProducts']);
