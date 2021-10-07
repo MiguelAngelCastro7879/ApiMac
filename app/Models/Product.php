@@ -9,5 +9,5 @@ class Product extends Model
 {
     use HasFactory;
     protected $products="products";
-    public $timestamps= false;
+    public $timestamps= true;
 }

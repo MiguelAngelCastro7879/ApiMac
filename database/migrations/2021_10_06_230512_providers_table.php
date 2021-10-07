@@ -18,6 +18,7 @@ class ProvidersTable extends Migration
             $table->string('nombre');
             $table->string('correo')->unique();
             $table->string('celular');
+            $table->timestamps();
         });
     }
 
