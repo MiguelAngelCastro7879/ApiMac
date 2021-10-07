@@ -15,13 +15,20 @@ class ProductsController extends Controller
         //Busca productos por su key
         //return Product::find(2);
 
-        return Product::where(
-            /*column->*/'stock',
-            /*operador->*/ '>',
-            /*Parametro->*/ 50
-        )->get();
+      //  return Product::where(
+      //      /*column->*/'stock',
+       //     /*operador->*/ '>',
+       //     /*Parametro->*/ 50
+       // )->get();
 
         //Retorna solo las columnas seleccionadas
         //return Product::select('id', 'nombre')->get();
+
+        return Product::select('products.nombre as PRODUCTO', 'categories.nombre as CATEGORIA')
+                    ->join('categories',
+                           'categories.id',
+                           '=',
+                           'products.category_id')
+                    ->get();       
     }
 }
