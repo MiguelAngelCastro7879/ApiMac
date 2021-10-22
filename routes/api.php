@@ -25,5 +25,11 @@ Route::get('/hola',function(Request $request)
 });
 
 
-Route::get('/products_get', [ProductsController::class, 'getProducts']);
+Route::get('/products', [ProductsController::class, 'getProducts']);
 Route::post('/products_post', [ProductsController::class, 'getProducts']);
+
+Route::post('/product/store', [ProductsController::class, 'store']);
+
+Route::put('/product/update/{id}', [ProductsController::class, 'update']);
+
+Route::delete('/product/delete/{id}', [ProductsController::class, 'delete']);
